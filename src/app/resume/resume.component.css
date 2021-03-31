@@ -1,0 +1,66 @@
+.resume-card{
+    padding-left: 3em;
+    padding-right: 3em;
+    padding-top:  3em;
+    padding-bottom: 2em;
+}
+
+.card-title{
+    text-align: left;
+}
+
+.button-toggle-class{
+    height: 50px;
+}
+
+.unselected-label-class{
+    width: fit-content;
+    padding: 1em;
+    cursor: pointer;
+    border: 0px;
+    justify-content: center;
+}
+
+.selected-label-class{
+    color:  black;
+    border:1px solid black;
+    width: fit-content;
+    padding: 1em;
+    cursor: pointer;
+    justify-content: center;
+}
+
+.unselected-label-class:hover{
+    color: black;
+    border:2px solid black;
+}
+
+.chip-class{
+    border:2px solid black;
+    color: black;
+    background-color: white;
+}
+
+.mobile-margin{
+    margin-top: -1em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.not-mobile-margin{
+    margin-top: 3em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media screen and (max-width: 1260px){
+    .card-title{
+        text-align: center;
+    }
+    
+}

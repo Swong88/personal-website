@@ -1,0 +1,19 @@
+.projects-card{
+    padding: 3em;
+}
+
+.card-title{
+    text-align: left;
+}
+
+@media screen and (max-width: 1260px){
+    .projects-card{
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+
+    .card-title{
+        text-align: center;
+    }
+    
+}

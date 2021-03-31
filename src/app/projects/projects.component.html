@@ -1,0 +1,52 @@
+<div>
+    <mat-card class='projects-card'>
+        <mat-card-title class="card-title">PROJECTS</mat-card-title>
+        <mat-card-subtitle class="card-title">A SELECTION OF PROJECTS I WORKED ON!</mat-card-subtitle>
+        <mat-divider style="padding-top: 2em;"></mat-divider>
+        <mat-card-content>
+            <mat-card style="margin-top: 4em;">
+                <mat-card-title class="card-title">BARSTAT</mat-card-title>
+                <mat-card-subtitle class="card-title">June 2017</mat-card-subtitle>
+                <mat-card-content style="height: 500px;">
+                    <mat-carousel
+                    timings="250ms ease-in"
+                    [autoplay]="true"
+                    interval="4000"
+                    maxWidth="auto"
+                    slideHeight='500px'
+                    proportion="25"
+                    slides="2"
+                    color="primary"
+                    [loop]="true"
+                    [hideArrows]="true"
+                    [hideIndicators]="false"
+                    [useKeyboard]="true"
+                    [useMouseWheel]="false"
+                    [maintainAspectRatio]='false'
+                    orientation="ltr"
+                  >
+                    <mat-carousel-slide
+                      #matCarouselSlide
+                      *ngFor="let slide of slides; let i = index"
+                      [image]="slide.image"
+                      overlayColor="#00000040"
+                      [hideOverlay]="true"
+                    ></mat-carousel-slide>
+                  </mat-carousel>
+                </mat-card-content>
+                <mat-card-content style="text-align: start;">
+                  <p style='line-height: 1.5;'>
+                    Its Friday night and you have had a long week. You decide you wanna go out with some friends but cant decide where to go? So what do you do? 
+                    Go to a bar and turns out its dead. Few people at the place, bad music and to top it all of expensive drinks. Now that you have wasted your cover money 
+                    you decide to just stay there. Night ruined and your wallet took a hit. That's when I came up with Barstat.
+                  </p>
+                </mat-card-content>
+                <mat-card-actions>
+                  <a href='https://www.lsureveille.com/daily/students-create-barstat-app-streamlines-nightlife-experience/article_8fb3740c-9e41-11e7-987e-df3352174e62.html'>
+                    <button mat-button>Read Article</button>
+                  </a>
+                </mat-card-actions>
+            </mat-card>
+        </mat-card-content>
+    </mat-card>
+</div>

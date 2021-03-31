@@ -1,0 +1,105 @@
+<div class='container'>
+    <mat-card class="resume-card">
+        <mat-card-title class='card-title'>RESUME</mat-card-title>
+        <mat-divider style="margin-top: 2em;"></mat-divider>
+        <mat-card-content>
+            <h3 style="text-align: center; margin-top: 5em;">EDUCATION</h3>
+            <p>
+                B.S Computer Science (Data Science Analytics) <br>
+                Louisiana State University, 2019
+            </p>
+            <h3 style="text-align: center;">EXPERIENCE</h3>
+            <h4 style="text-align: start;">IBM - APPLICATION DEVELOPERR (MOBILE AND WEB TECHNOLOGIES)</h4>
+            <label style="text-align: start;">JANUARY 2020 - PRESENT</label>
+            <Ul>
+                <li>
+                    Front-End Developer: Worked on maintain and improving the front-end of the different Angular applications within the project.<br>
+                    Responsible for ensuring the front-end meets the expectations of the UI Design.
+                </li>
+                <br>
+                <li>
+                    Back-End Developer: Worked on optimizing and refactoring code, fixing bugs, optimizing load times, and fixing security issues.<br>
+                    Worked with karma and jasmine frameworks for Angular to Unit test and provide high quality code.
+                </li>
+                <br>
+                <li>
+                    Database Management: Worked in creating REST API’s, data pipelines, managing upstream and downstream of data flow <br>
+                    to our applications, maintaining database using PostgreSQL.
+                </li>
+            </Ul>
+            <h4 style="text-align: start;">IBM - JUNIOR DEVELOPER INTERNSHIP</h4>
+            <label style="text-align: start;">December 2018 - December 2019</label>
+            <Ul>
+                <li>
+                    Developed new skills in Agile Methodologies, mobile, and web development.
+                </li>
+                <br>
+                <li>
+                    Acquired certified badges by IBM in foundations of IOS and Agile Methodologies.
+                </li>
+                <br>
+                <li>
+                    Assisted in the Front-end development on an internal project recruitment app for the IBM managers to use at job fairs.
+                </li>
+            </Ul>       
+            <h4 style="text-align: start;">BARSTAT - FOUNDER, CTO</h4>
+            <label style="text-align: start;">JUNE 2017 - PRESENT</label>
+            <ul>
+                <li>
+                    Founded a tech startup that provided a data analytics platform for nightlife and entertainment at Louisiana State University Baton Rouge <br>
+                    Campus.               
+                 </li>
+                <br>
+                <li>
+                    Won $2000 at LSU Incubator Competition.
+                </li>
+                <br>
+            </ul>      
+            <h3 style="text-align: center;">SKILLS</h3>
+            <div style="margin-top: 2em; display: flex; flex-wrap: wrap; justify-content: center;">
+                <button mat-stroked-button [ngClass]='isSelected("ALL") ? "selected-label-class" : "unselected-label-class"' (click)='selectItem("ALL")'>
+                    ALL
+                </button>
+                <button mat-stroked-button [ngClass]='isSelected("DATA ENGINEERING") ? "selected-label-class" : "unselected-label-class"' (click)='selectItem("DATA ENGINEERING")'>
+                    DATA ENGINEERING
+                </button>
+                <button mat-stroked-button [ngClass]='isSelected("DATABASES") ? "selected-label-class" : "unselected-label-class"' (click)='selectItem("DATABASES")'>
+                    DATABASES
+                </button>
+                <button mat-stroked-button [ngClass]='isSelected("WEB DEVELOPMENT") ? "selected-label-class" : "unselected-label-class"' (click)='selectItem("WEB DEVELOPMENT")'>
+                    WEB DEVELOPMENT
+                </button>
+                <button mat-stroked-button [ngClass]='isSelected("MOBILE DEVELOPMENT") ? "selected-label-class" : "unselected-label-class"' (click)='selectItem("MOBILE DEVELOPMENT")'>
+                    MOBILE DEVELOPMENT
+                </button>
+                <button mat-stroked-button [ngClass]='isSelected("LANGUAGES") ? "selected-label-class" : "unselected-label-class"' (click)='selectItem("LANGUAGES")'>
+                    LANGUAGES
+                </button>
+            </div>
+            <div style="margin-top: 3em; display: flex; flex-wrap: wrap; justify-content: center;">
+                    <div style="margin-right: 1em; line-height: 2;" *ngFor="let skill of filteredSkills">
+                        • {{skill.skill_name}}
+                    </div>
+            </div>
+            <div style="margin-top: 2em;">
+                <h3 style="text-align: center;">SELECTED COURSES</h3>
+                <div  style=" margin-top: 2em;" *ngIf='!isMobile()'>
+                    <div style='display: flex; flex-wrap: wrap; justify-content: center;'>
+                        <div style='margin-right: 1em; line-height: 2.5; font-size: small;' *ngFor='let course of courses'>
+                            • <u><b>{{course.course_id.toUpperCase()}}</b>: {{course.course_name.toUpperCase()}}</u>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf='isMobile()' style="margin-top: 2em;">
+                    <div *ngFor='let course of courses' style="text-align: center; height: 75px;">
+                        <b>{{course.course_id.toUpperCase()}}</b>: {{course.course_name.toUpperCase()}}
+                        <mat-divider style="margin-top: 1em; border-top-style: dashed;" [inset]='true'></mat-divider>
+                    </div>
+                </div>
+                <div [ngClass]='isMobile() ? "mobile-margin" : "not-mobile-margin"'>
+                    <label routerLink='/contact' style="text-align: center; cursor: pointer;" (click)='scrollUp()'><b>REFERENCES ARE AVAILABLE UPON REQUEST</b></label>
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

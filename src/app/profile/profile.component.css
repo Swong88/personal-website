@@ -1,0 +1,157 @@
+.main-container{
+    display: flex;
+    flex-wrap: nowrap;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.circular-img{
+    border-radius: 50%;
+    height: 175px;
+    width: 175px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.profile-container{
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-top: 6em;
+    margin-bottom: 3em;
+    max-width: 30%;
+}
+
+.outlet-container{
+    margin-top: 6em;
+    min-width: 65%;
+    margin-right: 3em;
+    margin-bottom: 6em;
+}
+
+.email-label{
+    text-align: center;
+    display: block;
+}
+
+.learn-more-button{
+    height: 50px;
+    width: 150px;
+    margin-top: 2.5em;
+    margin-right: 2em;
+}
+
+.about-me-button{
+    height: 50px;
+    width: 150px;
+    margin-top: 2.5em;
+    margin-right: 2em;
+}
+
+.schedule-button{
+    height: 50px;
+    width: 150px;
+    margin-top: 2.5em;
+    color: black;
+}
+
+.card-title{
+    text-align: left;
+}
+
+.icon-class{
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+    margin-right: 1em;
+}
+
+.footer-icon-class{
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+    margin-right: 0.5em;
+}
+
+.expanded-toolbar{
+    position: fixed;
+    z-index: 2;
+    background-color: white;
+}
+
+.constricted-toolbar{
+    position: fixed;
+    z-index: 2;
+    background-color: white;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.toolbar-items{
+    cursor: pointer;
+    width: fit-content;
+    text-align: center;
+    font-size: small;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+}
+
+.toolbar-items:focus{
+    outline: 0;
+}
+
+.toolbar-item-name{
+    cursor: pointer;
+    width: fit-content;
+    text-align: center;
+    font-size: medium;
+    margin-right: 1.5em;
+}
+
+.toolbar-item-name:focus{
+    outline: 0;
+}
+
+.toolbar-items:hover{
+    color: #2e59ba;
+}
+
+
+.toolbar-item-name:hover{
+    color: #2e59ba;
+}
+
+
+.vertical-divider{
+    height: auto;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+@media screen and (max-width: 1260px){
+
+    .profile-container{
+        min-width: 90%;
+        margin-top: 3em;
+        margin-right: 5%;
+        margin-left: 5%;
+    }
+
+    .outlet-container{
+        min-width: 100%;
+        margin-top: 6em;
+        margin-bottom: 2em;
+        margin-right: 0em;
+    }
+
+    .main-container{
+        flex-wrap: wrap-reverse;
+    }
+
+    .card-title{
+        text-align: center;
+    }
+}

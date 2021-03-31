@@ -1,0 +1,18 @@
+.about-me-card{
+    padding: 3em;
+}
+
+.li-style{
+    padding-top: 1.5em;
+}
+
+.card-title{
+    text-align: left;
+}
+
+@media screen and (max-width: 1260px){
+    .card-title{
+        text-align: center;
+    }
+    
+}

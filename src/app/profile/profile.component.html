@@ -1,0 +1,112 @@
+<div>
+    <div *ngIf='!isMobile()'>
+        <mat-toolbar class='expanded-toolbar'>
+            <label class='toolbar-item-name' routerLink='/' (click)='scrollUp()'>
+                STEVEN WONG
+            </label>
+            <mat-divider vertical style='height: 100%;'></mat-divider>
+            <label class='toolbar-items' routerLink='/about'(click)='scrollUp()'>
+                ABOUT
+            </label> 
+            <mat-divider vertical class='vertical-divider'></mat-divider>
+            <label class='toolbar-items' routerLink='/resume' (click)='scrollUp()'>
+                RESUME
+            </label>
+            <mat-divider vertical class='vertical-divider'></mat-divider>
+            <label class='toolbar-items' routerLink='/projects' (click)='scrollUp()'>
+                PROJECTS
+            </label>
+            <mat-divider vertical class='vertical-divider'></mat-divider>
+            <label class='toolbar-items' routerLink='/contact' (click)='scrollUp()'>
+                CONTACT
+            </label>
+        </mat-toolbar>
+    </div>
+    <div *ngIf='isMobile()'>
+        <mat-toolbar class='constricted-toolbar'>
+            <label class='toolbar-item-name' routerLink='/' (click)='scrollUp()'>
+                Steven Wong
+            </label>
+            <span class="example-spacer"></span>
+            <mat-icon style="cursor: pointer;" [matMenuTriggerFor]="menu">menu</mat-icon>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item routerLink='/about' (click)='scrollUp()'><mat-icon>badge</mat-icon>About</button>
+                <button mat-menu-item routerLink='/resume' (click)='scrollUp()'><mat-icon>text_snippet</mat-icon>Resume</button>
+                <button mat-menu-item routerLink='/projects' (click)='scrollUp()'><mat-icon>construction</mat-icon>Projects</button>
+                <button mat-menu-item routerLink='/contact' (click)='scrollUp()'><mat-icon>call</mat-icon>Contact</button>
+              </mat-menu>
+        </mat-toolbar>
+    </div>
+</div>
+<div class='main-container'>
+    <div class='profile-container'>
+        <mat-divider *ngIf="isMobile()" style="padding-bottom: 3em;"></mat-divider>
+        <img class='circular-img' src='../../assets/profile-pic.jpg'>
+        <h1 style="text-align: center;">STEVEN WONG</h1>
+        <mat-divider style="margin-top: 3em;margin-bottom: 3em;"></mat-divider>
+        <h4>ABOUT</h4>
+        <p style='line-height: 2; font-size: smaller;'>
+            Hi, I'm Steven. I like building things. I am a LSU Computer
+            Science graduate, self-taugh programmer in mobile and web applications. 
+            I am an avid learner, I use Stack Overflow, Udemy, and YouTube to keep up with new technologies.
+            I am also the founder of Barstat. 
+        </p>
+        <div style="display: inline-block;">
+            <button class="learn-more-button" mat-stroked-button *ngIf='getRoute() !== "/resume"' routerLink='/resume' (click)='scrollUp()'>
+                LEARN MORE
+            </button>
+            <button class="about-me-button" mat-stroked-button *ngIf='getRoute() === "/resume"' routerLink='/about'  (click)='scrollUp()'>
+                ABOUT ME
+            </button>
+            <button class="schedule-button" mat-stroked-button (click)='openCalendly()'>
+                SCHEDULE A CALL
+            </button>
+        </div>
+        <mat-divider style="margin-top: 4em;"></mat-divider>
+        <div style="margin-top: 2em;">
+            <label style="font-size: 10px; float: left; margin-top: 0.5em;">&#169; STEVEN WONG 2021</label>
+            <div style="float: right;">
+                <a href='https://www.linkedin.com/in/steven-wong-011a38132/'>
+                    <img src='../../assets/fa-linkedin.png' class="icon-class">
+                </a>
+                <a href='https://github.com/Swong88'>
+                    <img src='../../assets/fa-github.png' class="icon-class">
+                </a>
+                <a href='mailto:wongsteven11@gmail.com'>
+                    <img src='../../assets/fa-email.png' class="icon-class">
+                </a>
+            </div>
+        </div>
+        <div style="margin-top: 7em; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: center; align-items: center;">
+            <mat-divider style="width: 25%; margin-right: 1em;"></mat-divider>
+                <label style='font-size: 7px; margin-right: 1.5em;'>POWER BY</label>
+                <a href='https://angular.io/'>
+                    <img src='../../assets/fa-angular.png' class="footer-icon-class">
+                </a>
+                <a href='https://nodejs.org/en/'>
+                    <img src='../../assets/fa-node.png' class="footer-icon-class">
+                </a>
+                <a href='https://firebase.google.com/'>
+                    <img src='../../assets/fa-firebase.png' class="footer-icon-class">
+                </a>
+                <mat-divider style="width: 25%; margin-left: 1em"></mat-divider>
+        </div>
+    </div>
+
+    <div *ngIf='getRoute() === "/"' class='outlet-container'>
+        <mat-card style="padding: 2em;">
+            <mat-card-title class="card-title">ABOUT THIS SITE</mat-card-title>
+            <mat-divider style="margin-top: 3em;"></mat-divider>
+            <mat-card-content style="margin-top: 6em;">
+                <p>
+                    Welcome to my website. Please feel free to read more <u style='cursor: pointer;' routerLink='/about'>about me</u>, 
+                    or you can check out my <u style='cursor: pointer;' routerLink='/resume'>resume</u>, <u style='cursor: pointer;' routerLink='/projects'>projects</u> or <u style='cursor: pointer;' routerLink='/contact'>contact</u> me.
+                </p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div *ngIf='getRoute() !== "/"' class='outlet-container'>
+        <router-outlet></router-outlet>
+    </div>
+</div>
